@@ -1,0 +1,123 @@
+body {
+    background: linear-gradient(135deg, #1a2a6c, #27a70793, #3260df8c);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #27a70793, #0cb122);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #1212128a;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    height: calc(100vh - 80px); /* Adjust height to fill the remaining space */
+}
+
+.intro {
+    flex: 1;
+    margin-left: 20px;
+    animation: fadeIn 2s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    height: 100%;
+    overflow-y: auto;
+    border: 2px solid #3ee26296; /* Add border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.274); /* Add shadow */
+}
+
+.video-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideIn 1s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+video, iframe {
+    width: 100%;
+    max-width: 700px; /* Increased size */
+    height: 80vh; /* Increased height */
+    border: 2px solid #06753585;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+video:hover, iframe:hover {
+    transform: scale(1.05);
+}
+
+h2, h3 {
+    margin: 10px 0;
+}
+
+p {
+    line-height: 1.6;
+}
+
+#stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: transparent;
+    overflow: hidden;
+    animation: moveStars 20s linear infinite; /* Add animation */
+}
+
+.star {
+    position: absolute;
+    width: 8px; /* Increased size */
+    height: 8px; /* Increased size */
+    background: rgba(233, 97, 34, 0.76);
+    opacity: 1; /* Increased brightness */
+    border-radius: 57%;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; } /* Increased brightness */
+    50% { opacity: 0.5; } /* Increased brightness */
+}
+
+@keyframes moveStars {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
